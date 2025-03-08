@@ -61,7 +61,7 @@ const Login = () => {
             type={visible ? 'text' : 'password'}
           />
           <Boton type='submit' w='60%'>
-            Login
+            Iniciar sesión
           </Boton>
         </Form>
       </div>
