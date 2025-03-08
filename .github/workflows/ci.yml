@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: 22 # Asegúrate de usar la misma versión que en el proyecto
 
+      - name: Instalar pnpm
+        run: npm install -g pnpm
+
       - name: Instalar dependencias
         run: pnpm install
 
