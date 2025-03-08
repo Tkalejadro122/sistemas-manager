@@ -21,6 +21,12 @@ jobs:
       - name: Instalar pnpm
         run: npm install -g pnpm
 
+      - name: Configurar PNPM_HOME
+        run: |
+          pnpm setup
+          echo "PNPM_HOME=$HOME/.local/share/pnpm" >> $GITHUB_ENV
+          echo "$HOME/.local/share/pnpm" >> $GITHUB_PATH
+
       - name: Instalar HeroUI
         run: pnpm add -g heroui-cli
 
