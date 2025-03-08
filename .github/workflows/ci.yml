@@ -21,6 +21,9 @@ jobs:
       - name: Instalar pnpm
         run: npm install -g pnpm
 
+      -name: Instalar HeroUI
+        run: pnpm heroui add --all
+
       - name: Instalar dependencias
         run: pnpm install
 
