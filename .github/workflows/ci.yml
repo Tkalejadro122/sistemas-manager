@@ -23,7 +23,7 @@ jobs:
 
       - name: Configurar PNPM_HOME
         run: |
-          export SHELL =/bin/bash
+          export SHELL=/bin/bash
           pnpm setup
           echo "PNPM_HOME=$HOME/.local/share/pnpm" >> $GITHUB_ENV
           echo "$HOME/.local/share/pnpm" >> $GITHUB_PATH
