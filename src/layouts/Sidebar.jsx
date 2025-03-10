@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Menu as LucideMenu, X } from 'lucide-react'
-import { BookPlus } from 'lucide-react'
+import { Menu as LucideMenu, X, BookPlus } from 'lucide-react'
 import { PiStudent } from 'react-icons/pi'
 import { MdGroups } from 'react-icons/md'
 import { PiProjectorScreenChart } from 'react-icons/pi'
@@ -9,33 +8,14 @@ import Menu from '../components/sidebar/Menu'
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true)
   const [openMenu, setOpenMenu] = useState(null)
-  const [openMenu2, setOpenMenu2] = useState(null)
-  const [openMenu3, setOpenMenu3] = useState(null)
-  const [openMenu4, setOpenMenu4] = useState(null)
+  const [selectedOption, setSelectedOption] = useState(null)
 
   const toggleMenu = (index) => {
     setOpenMenu(openMenu === index ? null : index)
-    setOpenMenu2(null)
-    setOpenMenu3(null)
-    setOpenMenu4(null)
   }
-  const toggleMenu2 = (index) => {
-    setOpenMenu2(openMenu2 === index ? null : index)
-    setOpenMenu(null)
-    setOpenMenu3(null)
-    setOpenMenu4(null)
-  }
-  const toggleMenu3 = (index) => {
-    setOpenMenu3(openMenu3 === index ? null : index)
-    setOpenMenu(null)
-    setOpenMenu2(null)
-    setOpenMenu4(null)
-  }
-  const toggleMenu4 = (index) => {
-    setOpenMenu4(openMenu4 === index ? null : index)
-    setOpenMenu(null)
-    setOpenMenu2(null)
-    setOpenMenu3(null)
+
+  const handleOptionClick = (label) => {
+    setSelectedOption(label)
   }
 
   return (
@@ -51,10 +31,8 @@ const Sidebar = () => {
         {isOpen ? <X size={20} /> : <LucideMenu size={20} />}
       </button>
 
-      {/* Ocultar el menú cuando el sidebar está cerrado */}
       {isOpen && (
         <nav className='mt-16 space-y-2'>
-          {/*Primer menú*/}
           <Menu
             nombre='Matrícula'
             funcion={() => toggleMenu(1)}
@@ -66,22 +44,24 @@ const Sidebar = () => {
               { label: 'Contraprestaciones', href: '#' }
             ]}
             openMenu={openMenu === 1}
-          ></Menu>
-          {/*Segundo menú*/}
+            selectedOption={selectedOption}
+            handleOptionClick={handleOptionClick}
+          />
           <Menu
             nombre='Usuarios'
-            funcion={() => toggleMenu2(1)}
+            funcion={() => toggleMenu(2)}
             icono={<PiStudent className='text-[25px]' />}
             opciones={[
               { label: 'Profesores', href: '#' },
               { label: 'Estudiantes', href: '#' }
             ]}
-            openMenu={openMenu2 === 1}
-          ></Menu>
-          {/*Tercer menú*/}
+            openMenu={openMenu === 2}
+            selectedOption={selectedOption}
+            handleOptionClick={handleOptionClick}
+          />
           <Menu
             nombre='Grupos'
-            funcion={() => toggleMenu3(1)}
+            funcion={() => toggleMenu(3)}
             icono={<MdGroups className='text-[25px]' />}
             opciones={[
               {
@@ -93,20 +73,22 @@ const Sidebar = () => {
                 subopciones: [{ label: 'Maestría', href: '#' }]
               }
             ]}
-            openMenu={openMenu3 === 1}
-          ></Menu>
-
-          {/*Cuarto menú*/}
+            openMenu={openMenu === 3}
+            selectedOption={selectedOption}
+            handleOptionClick={handleOptionClick}
+          />
           <Menu
             nombre='Proyectos'
-            funcion={() => toggleMenu4(1)}
+            funcion={() => toggleMenu(4)}
             icono={<PiProjectorScreenChart className='text-[25px]' />}
             opciones={[
               { label: 'Opción 1', href: '#' },
               { label: 'Opción 2', href: '#' }
             ]}
-            openMenu={openMenu4 === 1}
-          ></Menu>
+            openMenu={openMenu === 4}
+            selectedOption={selectedOption}
+            handleOptionClick={handleOptionClick}
+          />
         </nav>
       )}
     </div>
