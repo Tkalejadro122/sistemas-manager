@@ -18,11 +18,11 @@ const Boton = ({
   const classNameBoton = () => {
     if (variant) {
       if (variant == 'bordered') {
-        return `${success ? 'border-[#4CAF50] text-[#4CAF50] data-[hover=true]:hover:bg-[#4CAF50] data-[hover=true]:hover:bg-opacity-20' : 'border-[#BC0017] text-[#BC0017] data-[hover=true]:hover:bg-[#BC0017] data-[hover=true]:hover:bg-opacity-20'}`
+        return `${success ? 'border-success text-success data-[hover=true]:hover:bg-success-dark data-[hover=true]:hover:bg-opacity-20' : 'border-rojo-institucional text-rojo-institucional data-[hover=true]:hover:bg-rojo-institucional data-[hover=true]:hover:bg-opacity-20'}`
       } else
-        return `${success ? 'text-[#4CAF50] data-[hover=true]:hover:bg-[#4CAF50] data-[hover=true]:hover:bg-opacity-30 ' : 'text-[#BC0017] data-[hover=true]:hover:bg-[#BC0017] data-[hover=true]:hover:bg-opacity-30'}`
+        return `${success ? 'text-success data-[hover=true]:hover:bg-success-dark data-[hover=true]:hover:bg-opacity-30 ' : 'text-rojo-institucional data-[hover=true]:hover:bg-rojo-institucional data-[hover=true]:hover:bg-opacity-30'}`
     } else {
-      return `${success ? 'bg-[#4CAF50] data-[hover=true]:hover:bg-[#39803D]' : 'bg-[#BC0017] data-[hover=true]:hover:bg-[#840705] '} text-white`
+      return `${success ? 'bg-success data-[hover=true]:hover:bg-success-dark' : 'bg-rojo-institucional data-[hover=true]:hover:bg-[#840705] '} text-white`
     }
   }
 
