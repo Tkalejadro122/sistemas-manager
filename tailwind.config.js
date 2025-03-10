@@ -9,7 +9,30 @@ export default {
     './src/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        'rojo-oscuro': '#840705',
+        'rojo-mate': '#AA1916',
+        'rojo-claro': '#FFF1EF',
+        'rojo-institucional': '#BC0017',
+        'negro-institucional': '#000000',
+        'gris-institucional': '#818386',
+        'gris-intermedio': '#C0C0C0',
+        'gris-claro': '#EBEBEB',
+        success: '#4CAF50',
+        'success-dark': '#39803D',
+        'success-light': '#F0FDF4',
+        warning: '#F5A524',
+        'warning-light': '#FAD98D',
+        'warning-dark': '#431505',
+        info: '#6C6E8B',
+        'info-light': '#FBFBFC',
+        'info-dark': '363744',
+        blanco: '#FFFFFF',
+        'danger-dark': '#480807',
+        'danger-light': '#F83F3B'
+      }
+    }
   },
   darkMode: 'light',
   plugins: [heroui()]

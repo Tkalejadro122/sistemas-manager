@@ -18,9 +18,9 @@ const Login = () => {
   }
 
   return (
-    <div className='flex items-center justify-center h-screen w-full bg-[#c0c0c0]'>
-      <div className='w-1/2 h-3/5 bg-white rounded-[15px] flex flex-col items-center p-8'>
-        <p className='text-[24px] text-[#bc0017]'>Iniciar sesión</p>
+    <div className='flex items-center justify-center h-screen w-full bg-gris-intermedio'>
+      <div className='w-1/2 h-3/5 bg-blanco rounded-[15px] flex flex-col items-center p-8'>
+        <p className='text-[24px] text-rojo-institucional'>Iniciar sesión</p>
         <Form
           onSubmit={onSubmit}
           className='flex flex-col w-full items-center my-4 space-y-10'
@@ -28,7 +28,8 @@ const Login = () => {
           <Input
             classNames={{
               base: 'w-3/5',
-              inputWrapper: 'border border-gray-600 rounded-[15px] w-full'
+              inputWrapper:
+                'border border-gris-institucional rounded-[15px] w-full'
             }}
             isRequired
             label='Correo electrónico'
@@ -42,7 +43,8 @@ const Login = () => {
           <Input
             classNames={{
               base: 'w-3/5',
-              inputWrapper: 'border border-gray-600 rounded-[15px] w-full'
+              inputWrapper:
+                'border border-gris-institucional rounded-[15px] w-full'
             }}
             isRequired
             label='Contraseña'
