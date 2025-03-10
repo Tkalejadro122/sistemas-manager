@@ -3,11 +3,21 @@ import { ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 
-const Menu = ({ nombre, funcion, icono, opciones, openMenu }) => {
+const Menu = ({
+  nombre,
+  funcion,
+  icono,
+  opciones,
+  openMenu,
+  selectedOption,
+  handleOptionClick
+}) => {
   return (
     <div>
       <button
-        className={`flex items-center justify-between h-8 w-full p-3 ${openMenu ? 'text-white bg-rojo-mate' : 'text-black'}  rounded-md transition-colors duration-300 ease-in-out`}
+        className={`flex items-center justify-between h-8 w-full p-3 ${
+          openMenu ? 'text-white bg-rojo-mate' : 'text-black'
+        } rounded-md transition-colors duration-300 ease-in-out`}
         onClick={funcion}
       >
         {icono}
@@ -37,9 +47,14 @@ const Menu = ({ nombre, funcion, icono, opciones, openMenu }) => {
                 <a
                   key={subIndex}
                   href={sub.href}
-                  className='block pt-1 pl-4 text-negro-institucional rounded-md hover:text-rojo-institucional hover:bg-rojo-institucional hover:bg-opacity-10 transition-colors duration-300 ease-in-out'
+                  onClick={() => handleOptionClick(sub.label)}
+                  className={`block pt-1 pl-4 text-negro-institucional rounded-md transition-colors duration-300 ease-in-out ${
+                    selectedOption === sub.label
+                      ? 'text-rojo-institucional bg-rojo-institucional bg-opacity-20'
+                      : 'hover:text-rojo-institucional hover:bg-rojo-institucional hover:bg-opacity-10'
+                  }`}
                 >
-                  {'·' + sub.label}
+                  {'· ' + sub.label}
                 </a>
               ))}
             </div>
@@ -47,7 +62,12 @@ const Menu = ({ nombre, funcion, icono, opciones, openMenu }) => {
             <a
               key={index}
               href={opcion.href}
-              className='block pt-1 pl-6 text-negro-institucional rounded-md hover:text-rojo-institucional hover:bg-rojo-institucional hover:bg-opacity-10 transition-colors duration-300 ease-in-out'
+              onClick={() => handleOptionClick(opcion.label)}
+              className={`block pt-1 pl-6 text-negro-institucional rounded-md transition-colors duration-300 ease-in-out ${
+                selectedOption === opcion.label
+                  ? 'text-rojo-institucional bg-rojo-institucional bg-opacity-20'
+                  : 'hover:text-rojo-institucional hover:bg-rojo-institucional hover:bg-opacity-10'
+              }`}
             >
               {opcion.label}
             </a>
@@ -65,7 +85,7 @@ Menu.propTypes = {
   opciones: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
-      href: PropTypes.string, // Puede ser opcional
+      href: PropTypes.string,
       subopciones: PropTypes.arrayOf(
         PropTypes.shape({
           label: PropTypes.string.isRequired,
@@ -74,7 +94,9 @@ Menu.propTypes = {
       )
     })
   ),
-  openMenu: PropTypes.bool // Debe ser un booleano, no un número
+  openMenu: PropTypes.bool,
+  selectedOption: PropTypes.string,
+  handleOptionClick: PropTypes.func.isRequired
 }
 
 export default Menu
