@@ -66,7 +66,7 @@ const Sidebar = () => {
             opciones={[
               {
                 label: 'Pregrado',
-                subopciones: [{ label: 'Ing. Sistemas', href: '#' }]
+                subopciones: [{ label: 'Ing. Sistemas', href: '/grupos' }]
               },
               {
                 label: 'Posgrado',

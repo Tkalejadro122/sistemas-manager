@@ -65,7 +65,7 @@ const Menu = ({
               onClick={() => handleOptionClick(opcion.label)}
               className={`block pt-1 pl-6 text-negro-institucional rounded-md transition-colors duration-300 ease-in-out ${
                 selectedOption === opcion.label
-                  ? 'text-rojo-institucional bg-rojo-institucional bg-opacity-20'
+                  ? 'text-rojo-institucional bg-rojo-institucional font-semibold bg-opacity-20'
                   : 'hover:text-rojo-institucional hover:bg-rojo-institucional hover:bg-opacity-10'
               }`}
             >
