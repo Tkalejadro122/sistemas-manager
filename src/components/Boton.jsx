@@ -31,7 +31,7 @@ const Boton = ({
       isDisabled={disabled}
       startContent={startContent}
       endContent={endContent}
-      className={classNameBoton()}
+      className={classNameBoton() + ' min-w-1'}
       variant={variant}
       isIconOnly={isIconOnly}
       onPress={onClick}
@@ -49,8 +49,8 @@ const Boton = ({
 // Validación de props con PropTypes
 Boton.propTypes = {
   children: PropTypes.node,
-  h: PropTypes.number,
-  w: PropTypes.number,
+  h: PropTypes.string,
+  w: PropTypes.string,
   success: PropTypes.bool,
   startContent: PropTypes.node,
   endContent: PropTypes.node,

@@ -31,6 +31,11 @@ export default {
         blanco: '#FFFFFF',
         'danger-dark': '#480807',
         'danger-light': '#F83F3B'
+      },
+      fontSize: {
+        titulos: '30px',
+        subtitulos: '24px',
+        normal: '16px'
       }
     }
   },

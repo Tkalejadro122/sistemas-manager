@@ -7,20 +7,23 @@ import { LockKeyhole } from 'lucide-react'
 import { Eye } from 'lucide-react'
 import { EyeOff } from 'lucide-react'
 import Boton from '../../components/Boton'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [visible, setVisible] = useState(false)
+  const Navigate = useNavigate()
 
   const onSubmit = (e) => {
     e.preventDefault()
+    Navigate('/grupos')
   }
 
   return (
     <div className='flex items-center justify-center h-screen w-full bg-gris-intermedio'>
       <div className='w-1/2 h-3/5 bg-blanco rounded-[15px] flex flex-col items-center p-8'>
-        <p className='text-[24px] text-rojo-institucional'>Iniciar sesión</p>
+        <p className='text-titulos text-rojo-institucional'>Iniciar sesión</p>
         <Form
           onSubmit={onSubmit}
           className='flex flex-col w-full items-center my-4 space-y-10'
@@ -54,6 +57,7 @@ const Login = () => {
             onValueChange={setPassword}
             endContent={
               <button
+                type='button'
                 className='focus:outline-none'
                 onClick={() => setVisible(!visible)}
               >
