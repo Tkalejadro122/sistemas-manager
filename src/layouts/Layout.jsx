@@ -3,7 +3,7 @@ import { LogOut } from 'lucide-react'
 import { Tooltip } from '@heroui/react'
 import Sidebar from './Sidebar'
 import { Outlet } from 'react-router-dom'
-import { SidebarProvider } from '../context/SideBarContext'
+import { SidebarProvider } from '../context/SidebarContext'
 
 const Layout = () => {
   return (
