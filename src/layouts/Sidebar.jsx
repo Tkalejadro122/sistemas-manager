@@ -4,7 +4,7 @@ import { PiStudent } from 'react-icons/pi'
 import { MdGroups } from 'react-icons/md'
 import { PiProjectorScreenChart } from 'react-icons/pi'
 import Menu from '../components/sidebar/Menu'
-import { useSidebar } from '../context/SideBarContext'
+import { useSidebar } from '../context/SidebarContext'
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true)
