@@ -1,21 +1,43 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import {
-  Modal,
+  Modal as ModalComponent,
   ModalContent,
   ModalHeader,
   ModalBody,
   ModalFooter,
-  useDisclosure
+  Button
 } from '@heroui/react'
-import Boton from './Boton'
-import React from 'react'
 
-const { isOpen, onOpen, onOpenChange } = useDisclosure()
-
-const ModalP = () => {
+const Modal = ({ isOpen, onOpenChange, cabecera, cuerpo, footer }) => {
   return (
-    <>
-      <Boton onClick={onOpen}>Abrir modal</Boton>
-    </>
+    <ModalComponent isOpen={isOpen} onOpenChange={onOpenChange}>
+      <ModalContent>
+        {(onClose) => (
+          <>
+            <ModalHeader className='flex flex-col gap-1'>
+              {cabecera}
+            </ModalHeader>
+            <ModalBody>{cuerpo}</ModalBody>
+            <ModalFooter>
+              <Button color='danger' variant='light' onPress={onClose}>
+                Cancelar
+              </Button>
+              {footer}
+            </ModalFooter>
+          </>
+        )}
+      </ModalContent>
+    </ModalComponent>
   )
 }
-export default ModalP
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onOpenChange: PropTypes.func.isRequired,
+  cabecera: PropTypes.string,
+  cuerpo: PropTypes.node,
+  footer: PropTypes.node
+}
+
+export default Modal

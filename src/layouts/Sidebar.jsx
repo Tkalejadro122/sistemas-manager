@@ -4,14 +4,15 @@ import { PiStudent } from 'react-icons/pi'
 import { MdGroups } from 'react-icons/md'
 import { PiProjectorScreenChart } from 'react-icons/pi'
 import Menu from '../components/sidebar/Menu'
+import { useSidebar } from '../context/SidebarContext'
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true)
-  const [openMenu, setOpenMenu] = useState(null)
-  const [selectedOption, setSelectedOption] = useState(null)
+  const { selectedMenu, setSelectedMenu, selectedOption, setSelectedOption } =
+    useSidebar()
 
   const toggleMenu = (index) => {
-    setOpenMenu(openMenu === index ? null : index)
+    setSelectedMenu(selectedMenu === index ? null : index)
   }
 
   const handleOptionClick = (label) => {
@@ -43,7 +44,7 @@ const Sidebar = () => {
               { label: 'Reintegro', href: '#' },
               { label: 'Contraprestaciones', href: '#' }
             ]}
-            openMenu={openMenu === 1}
+            openMenu={selectedMenu === 1}
             selectedOption={selectedOption}
             handleOptionClick={handleOptionClick}
           />
@@ -55,7 +56,7 @@ const Sidebar = () => {
               { label: 'Profesores', href: '#' },
               { label: 'Estudiantes', href: '#' }
             ]}
-            openMenu={openMenu === 2}
+            openMenu={selectedMenu === 2}
             selectedOption={selectedOption}
             handleOptionClick={handleOptionClick}
           />
@@ -73,7 +74,7 @@ const Sidebar = () => {
                 subopciones: [{ label: 'Maestría', href: '#' }]
               }
             ]}
-            openMenu={openMenu === 3}
+            openMenu={selectedMenu === 3}
             selectedOption={selectedOption}
             handleOptionClick={handleOptionClick}
           />
@@ -85,7 +86,7 @@ const Sidebar = () => {
               { label: 'Opción 1', href: '#' },
               { label: 'Opción 2', href: '#' }
             ]}
-            openMenu={openMenu === 4}
+            openMenu={selectedMenu === 4}
             selectedOption={selectedOption}
             handleOptionClick={handleOptionClick}
           />

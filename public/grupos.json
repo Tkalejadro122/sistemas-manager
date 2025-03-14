@@ -1,0 +1,212 @@
+[
+    {
+      "id": 1,
+      "Nombre": "Grupo A",
+      "Docente": "Dr. Pérez",
+      "# Estudiantes": 25
+    },
+    {
+      "id": 2,
+      "Nombre": "Grupo B",
+      "Docente": "Lic. Ramírez",
+      "# Estudiantes": 30
+    },
+    {
+      "id": 3,
+      "Nombre": "Grupo C",
+      "Docente": "Ing. Gutiérrez",
+      "# Estudiantes": 20
+    },
+    {
+      "id": 4,
+      "Nombre": "Grupo D",
+      "Docente": "Mtro. López",
+      "# Estudiantes": 15
+    },
+    {
+      "id": 5,
+      "Nombre": "Grupo E",
+      "Docente": "Dra. Martínez",
+      "# Estudiantes": 28
+    },
+    {
+      "id": 6,
+      "Nombre": "Grupo F",
+      "Docente": "Lic. Herrera",
+      "# Estudiantes": 18
+    },
+    {
+      "id": 7,
+      "Nombre": "Grupo G",
+      "Docente": "Ing. Torres",
+      "# Estudiantes": 22
+    },
+    {
+      "id": 8,
+      "Nombre": "Grupo H",
+      "Docente": "Mtro. Gómez",
+      "# Estudiantes": 27
+    },
+    {
+      "id": 9,
+      "Nombre": "Grupo I",
+      "Docente": "Dra. Salazar",
+      "# Estudiantes": 19
+    },
+    {
+      "id": 10,
+      "Nombre": "Grupo J",
+      "Docente": "Lic. Castro",
+      "# Estudiantes": 24
+    },
+    {
+      "id": 11,
+      "Nombre": "Grupo K",
+      "Docente": "Dr. Pérez",
+      "# Estudiantes": 23
+    },
+    {
+      "id": 12,
+      "Nombre": "Grupo L",
+      "Docente": "Lic. Ramírez",
+      "# Estudiantes": 26
+    },
+    {
+      "id": 13,
+      "Nombre": "Grupo M",
+      "Docente": "Ing. Gutiérrez",
+      "# Estudiantes": 21
+    },
+    {
+      "id": 14,
+      "Nombre": "Grupo N",
+      "Docente": "Mtro. López",
+      "# Estudiantes": 17
+    },
+    {
+      "id": 15,
+      "Nombre": "Grupo O",
+      "Docente": "Dra. Martínez",
+      "# Estudiantes": 29
+    },
+    {
+      "id": 16,
+      "Nombre": "Grupo P",
+      "Docente": "Lic. Herrera",
+      "# Estudiantes": 16
+    },
+    {
+      "id": 17,
+      "Nombre": "Grupo Q",
+      "Docente": "Ing. Torres",
+      "# Estudiantes": 22
+    },
+    {
+      "id": 18,
+      "Nombre": "Grupo R",
+      "Docente": "Mtro. Gómez",
+      "# Estudiantes": 30
+    },
+    {
+      "id": 19,
+      "Nombre": "Grupo S",
+      "Docente": "Dra. Salazar",
+      "# Estudiantes": 20
+    },
+    {
+      "id": 20,
+      "Nombre": "Grupo T",
+      "Docente": "Lic. Castro",
+      "# Estudiantes": 24
+    },
+    {
+      "id": 21,
+      "Nombre": "Grupo U",
+      "Docente": "Dr. Pérez",
+      "# Estudiantes": 25
+    },
+    {
+      "id": 22,
+      "Nombre": "Grupo V",
+      "Docente": "Lic. Ramírez",
+      "# Estudiantes": 30
+    },
+    {
+      "id": 23,
+      "Nombre": "Grupo W",
+      "Docente": "Ing. Gutiérrez",
+      "# Estudiantes": 18
+    },
+    {
+      "id": 24,
+      "Nombre": "Grupo X",
+      "Docente": "Mtro. López",
+      "# Estudiantes": 19
+    },
+    {
+      "id": 25,
+      "Nombre": "Grupo Y",
+      "Docente": "Dra. Martínez",
+      "# Estudiantes": 27
+    },
+    {
+      "id": 26,
+      "Nombre": "Grupo Z",
+      "Docente": "Lic. Herrera",
+      "# Estudiantes": 22
+    },
+    {
+      "id": 27,
+      "Nombre": "Grupo AA",
+      "Docente": "Ing. Torres",
+      "# Estudiantes": 21
+    },
+    {
+      "id": 28,
+      "Nombre": "Grupo AB",
+      "Docente": "Mtro. Gómez",
+      "# Estudiantes": 28
+    },
+    {
+      "id": 29,
+      "Nombre": "Grupo AC",
+      "Docente": "Dra. Salazar",
+      "# Estudiantes": 19
+    },
+    {
+      "id": 30,
+      "Nombre": "Grupo AD",
+      "Docente": "Lic. Castro",
+      "# Estudiantes": 24
+    },
+    {
+      "id": 31,
+      "Nombre": "Grupo AE",
+      "Docente": "Dr. Pérez",
+      "# Estudiantes": 26
+    },
+    {
+      "id": 32,
+      "Nombre": "Grupo AF",
+      "Docente": "Lic. Ramírez",
+      "# Estudiantes": 29
+    },
+    {
+      "id": 33,
+      "Nombre": "Grupo AG",
+      "Docente": "Ing. Gutiérrez",
+      "# Estudiantes": 23
+    },
+    {
+      "id": 34,
+      "Nombre": "Grupo AH",
+      "Docente": "Mtro. López",
+      "# Estudiantes": 22
+    },
+    {
+      "id": 35,
+      "Nombre": "Grupo AI",
+      "Docente": "Dra. Martínez",
+      "# Estudiantes": 30
+    }
+  ]

@@ -9,19 +9,20 @@ import {
   TableRow,
   TableCell,
   Pagination,
-  getKeyValue
+  getKeyValue,
+  Tooltip
 } from '@heroui/react'
 
-const Tabla = ({ usuarios, columnas, opciones }) => {
+const Tabla = ({ informacion, columnas, acciones, itemsPorPagina }) => {
   const [page, setPage] = React.useState(1)
-  const rowsPerPage = 5
-  const pages = Math.ceil(usuarios.length / rowsPerPage)
+  const rowsPerPage = itemsPorPagina
+  const pages = Math.ceil(informacion.length / rowsPerPage)
   const items = React.useMemo(() => {
     const start = (page - 1) * rowsPerPage
     const end = start + rowsPerPage
 
-    return usuarios.slice(start, end)
-  }, [page, usuarios])
+    return informacion.slice(start, end)
+  }, [page, informacion])
 
   return (
     <>
@@ -41,7 +42,7 @@ const Tabla = ({ usuarios, columnas, opciones }) => {
         </TableHeader>
         <TableBody items={items}>
           {(item) => (
-            <TableRow key={item.name}>
+            <TableRow key={items.indexOf(item)}>
               {columnas.slice(0, -1).map((columnKey) => (
                 <TableCell key={columnKey}>
                   {getKeyValue(item, columnKey)}
@@ -49,10 +50,24 @@ const Tabla = ({ usuarios, columnas, opciones }) => {
               ))}
               <TableCell>
                 <div className='flex flex-row justify-center space-x-2 w-full'>
-                  {opciones.map((Opcion, index) => (
-                    <Boton isIconOnly key={index}>
-                      {Opcion}
-                    </Boton>
+                  {acciones.map(({ icono, tooltip, accion }, index) => (
+                    <Tooltip
+                      key={index}
+                      content={tooltip}
+                      placement='bottom'
+                      showArrow
+                    >
+                      <div>
+                        <Boton
+                          isIconOnly
+                          w='32px'
+                          h='32px'
+                          onClick={() => accion(item)}
+                        >
+                          {icono}
+                        </Boton>
+                      </div>
+                    </Tooltip>
                   ))}
                 </div>
               </TableCell>
@@ -62,9 +77,7 @@ const Tabla = ({ usuarios, columnas, opciones }) => {
       </Table>
       <div className='flex w-full justify-center pt-8'>
         <Pagination
-          classNames={{
-            cursor: 'bg-rojo-institucional text-white'
-          }}
+          classNames={{ cursor: 'bg-rojo-institucional text-white' }}
           showControls
           color='danger'
           showShadow
@@ -78,9 +91,16 @@ const Tabla = ({ usuarios, columnas, opciones }) => {
 }
 
 Tabla.propTypes = {
-  usuarios: PropTypes.array.isRequired,
+  informacion: PropTypes.array.isRequired,
   columnas: PropTypes.array.isRequired,
-  opciones: PropTypes.arrayOf(PropTypes.node).isRequired
+  acciones: PropTypes.arrayOf(
+    PropTypes.shape({
+      icono: PropTypes.node.isRequired,
+      tooltip: PropTypes.string.isRequired,
+      accion: PropTypes.func.isRequired
+    })
+  ).isRequired,
+  itemsPorPagina: PropTypes.number.isRequired
 }
 
 export default Tabla
